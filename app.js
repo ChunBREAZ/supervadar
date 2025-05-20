@@ -230,7 +230,7 @@ function populateTable(data) {
 // 获取数据
 async function fetchData() {
     try {
-        const response = await fetch('http://supervadar-5u7db901e-bochuns-projects.vercel.app/api/data');
+        const response = await fetch('/api/data');
         if (!response.ok) throw new Error(`HTTP错误: ${response.status}`);
         allData = await response.json();
         
