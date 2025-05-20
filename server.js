@@ -1,14 +1,13 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
-const cors = require('cors'); // 引入 cors 中间件
 const app = express();
 const port = 3000;  // Node.js 服务器端口
 
 // 数据库连接配置（MySQL 端口保持 3306）
 const pool = mysql.createPool({
-    host: 'supervadar-db.c2zssa8mopj7.us-east-1.rds.amazonaws.com',
-    user: 'admin',
-    password: '12345678',
+    host: 'localhost',
+    user: 'root',
+    password: 'Kbc2011433521!',
     database: 'academic_db',
     port: 3306,  // MySQL 端口
 });
@@ -24,8 +23,13 @@ pool.getConnection()
         process.exit(1);
     });
 
-// 使用 cors 中间件
-app.use(cors());
+// 允许跨域请求
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 
 // 解析 JSON 请求体
 app.use(express.json());
