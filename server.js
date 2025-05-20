@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
+const cors = require('cors'); // 引入 cors 中间件
 const app = express();
 const port = 3000;  // Node.js 服务器端口
 
@@ -23,13 +24,8 @@ pool.getConnection()
         process.exit(1);
     });
 
-// 允许跨域请求
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
+// 使用 cors 中间件
+app.use(cors());
 
 // 解析 JSON 请求体
 app.use(express.json());
