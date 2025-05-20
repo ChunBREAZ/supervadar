@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervadar 全球导师择校系统 - 一站式获取导师详细信息</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="导师信息数据库，提供全球导师的详细信息。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <h1 class="title-left">Supervadar<span style="color: #3498db;">择校系统</span></h1>
+        </div>
+    </header>
+
+    <!-- 网页介绍 -->
+    <section class="introduction">
+        <div class="container">
+            <h2>欢迎使用 Supervadar 全球导师择校系统</h2>
+            <p>本系统旨在为您提供全球导师的详细信息，帮助您更便捷地选择适合的导师和学校。您可以通过筛选洲域、国家、行政区域、学校和院系等条件，精准定位您需要的导师信息。同时，您还可以使用搜索功能快速查找特定关键词的导师数据。</p>
+        </div>
+    </section>
+
+    <!-- 筛选器容器 -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-row">
+                    <select id="continent" class="filter-select">
+                        <option value="">选择洲域</option>
+                    </select>
+                    <select id="country" class="filter-select">
+                        <option value="">选择国家&地区</option>
+                    </select>
+                    <select id="region" class="filter-select">
+                        <option value="">选择行政区域</option>
+                    </select>
+                    <button id="reset-filter" class="reset-button">重置</button>
+                </div>
+                <div class="filter-row">
+                    <select id="school" class="filter-select">
+                        <option value="">选择学校</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <select id="department" class="filter-select">
+                        <option value="">选择院系</option>
+                    </select>
+                </div>
+            </div>
+            <!-- 搜索框容器 -->
+            <div class="search-container">
+                <input type="text" id="search-input" class="filter-select search-input" placeholder="搜索数据">
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据表格 -->
+    <section class="table-section">
+        <div class="container">
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>洲域</th>
+                            <th>国家&地区</th>
+                            <th>行政区域</th>
+                            <th>学校</th>
+                            <th>院系</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>职称</th>
+                            <th>个人主页</th>
+                            <th>课题组主页</th>
+                            <th>邮箱地址</th>
+                            <th>研究领域</th>
+                            <th>代表论文列表</th>
+                            <th>招生信息</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Supervadar 择校系统 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
