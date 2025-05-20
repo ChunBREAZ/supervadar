@@ -231,7 +231,7 @@ function populateTable(data) {
 async function fetchData() {
     try {
         // 修改为实际的 Vercel 部署地址
-        const response = await fetch('localhost:3000/api/data');
+        const response = await fetch('http://localhost:3000/api/data');
         if (!response.ok) throw new Error(`HTTP错误: ${response.status}`);
         allData = await response.json();
         
